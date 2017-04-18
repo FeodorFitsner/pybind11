@@ -1,6 +1,7 @@
 version: 1.0.{build}
 image:
 - Visual Studio 2017
+max_jobs: 2
 test: off
 build:
   parallel: true
