@@ -1,21 +1,14 @@
 version: 1.0.{build}
 image:
 - Visual Studio 2017
-- Visual Studio 2015
 test: off
 build:
   parallel: true
 platform:
 - x64
-- x86
 environment:
   matrix:
   - CONDA: 36
-  - CONDA: 27
-matrix:
-  exclude:
-    - image: Visual Studio 2015
-      platform: x86
 install:
 - ps: |
     if ($env:PLATFORM -eq "x64") { $env:CMAKE_ARCH = "x64" }
