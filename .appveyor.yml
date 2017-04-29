@@ -11,6 +11,7 @@ environment:
   matrix:
   - CONDA: 36
 install:
+- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
 - ps: |
     if ($env:PLATFORM -eq "x64") { $env:CMAKE_ARCH = "x64" }
     $env:CMAKE_GENERATOR = "Visual Studio 15 2017"
